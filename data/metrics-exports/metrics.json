@@ -1,0 +1,76 @@
+{
+  "generatedAt": "2025-10-13T07:30:34.652Z",
+  "summary": {
+    "total": 7,
+    "successful": 5,
+    "failed": 2,
+    "successRate": 71.42857142857143,
+    "avgResponseTime": 3429.8571428571427,
+    "totalTokens": 3496,
+    "totalCost": 0.0005244,
+    "errorCounts": {
+      "Simulated failure": 2
+    },
+    "uptime": 24020
+  },
+  "requests": [
+    {
+      "timestamp": "2025-10-13T07:30:14.758Z",
+      "query": "What is TypeScript?",
+      "success": true,
+      "responseTime": 4126,
+      "tokens": 485,
+      "cost": 0.00007275
+    },
+    {
+      "timestamp": "2025-10-13T07:30:21.012Z",
+      "query": "Explain JavaScript promises",
+      "success": true,
+      "responseTime": 6254,
+      "tokens": 907,
+      "cost": 0.00013605
+    },
+    {
+      "timestamp": "2025-10-13T07:30:23.410Z",
+      "query": "What is Docker?",
+      "success": true,
+      "responseTime": 2398,
+      "tokens": 464,
+      "cost": 0.0000696
+    },
+    {
+      "timestamp": "2025-10-13T07:30:23.410Z",
+      "query": "Simulated timeout error",
+      "success": false,
+      "responseTime": 0,
+      "tokens": 0,
+      "cost": 0,
+      "error": "Simulated failure"
+    },
+    {
+      "timestamp": "2025-10-13T07:30:28.284Z",
+      "query": "What are microservices?",
+      "success": true,
+      "responseTime": 4874,
+      "tokens": 843,
+      "cost": 0.00012644999999999998
+    },
+    {
+      "timestamp": "2025-10-13T07:30:28.284Z",
+      "query": "Another simulated error",
+      "success": false,
+      "responseTime": 0,
+      "tokens": 0,
+      "cost": 0,
+      "error": "Simulated failure"
+    },
+    {
+      "timestamp": "2025-10-13T07:30:34.641Z",
+      "query": "Explain REST APIs",
+      "success": true,
+      "responseTime": 6357,
+      "tokens": 797,
+      "cost": 0.00011954999999999999
+    }
+  ]
+}

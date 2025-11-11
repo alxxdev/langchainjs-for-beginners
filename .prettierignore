@@ -1,0 +1,44 @@
+# Dependencies
+node_modules
+
+# Build outputs
+dist
+build
+*.js.map
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage
+coverage
+
+# Package files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Git
+.git
+.gitignore
+
+# Data files
+data/
+*.db
+*.sqlite
+
+# Documentation (manual formatting for educational content)
+*.md
+
+# Editor
+.vscode
+.idea
+
+# OS
+.DS_Store
+Thumbs.db

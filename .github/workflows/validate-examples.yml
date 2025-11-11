@@ -1,0 +1,61 @@
+name: Validate Code Examples
+
+# This workflow only runs when:
+# 1. Commit message contains "validate-examples"
+# 2. PR title contains "validate-examples"
+# 3. Manually triggered via GitHub Actions UI
+#
+# Example commit: "Update RAG examples validate-examples"
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+  workflow_dispatch: # Allows manual triggering via Actions UI
+
+jobs:
+  validate:
+    name: Test All Code Examples (Node 22 LTS)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Only run if commit message contains "validate-examples" or manually triggered
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.message, 'validate-examples') ||
+      contains(github.event.pull_request.title, 'validate-examples')
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 22 (LTS)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run validation tests
+        env:
+          AI_API_KEY: ${{ secrets.AI_API_KEY }}
+          AI_ENDPOINT: ${{ secrets.AI_ENDPOINT || 'https://models.inference.ai.azure.com' }}
+          AI_MODEL: ${{ secrets.AI_MODEL || 'gpt-5-mini' }}
+          AI_EMBEDDING_MODEL: ${{ secrets.AI_EMBEDDING_MODEL || 'text-embedding-3-small' }}
+          AI_API_VERSION: ${{ secrets.AI_API_VERSION || '2025-01-01-preview' }}
+        run: npm test:parallel
+
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: validation-results
+          path: |
+            **/*.log
+          retention-days: 7

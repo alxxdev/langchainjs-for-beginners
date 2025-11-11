@@ -1,0 +1,37 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Introduction to LangChain",
+      "author": "Jane Doe",
+      "content": "LangChain is a framework for building AI applications...",
+      "tags": [
+        "ai",
+        "langchain",
+        "tutorial"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Working with Documents",
+      "author": "John Smith",
+      "content": "Document processing is essential for RAG systems...",
+      "tags": [
+        "documents",
+        "rag",
+        "vectors"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Effective Prompting Techniques",
+      "author": "Alice Johnson",
+      "content": "Effective prompt engineering can dramatically improve results...",
+      "tags": [
+        "prompts",
+        "engineering",
+        "best-practices"
+      ]
+    }
+  ]
+}
