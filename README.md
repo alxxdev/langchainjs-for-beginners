@@ -27,6 +27,8 @@ This course takes you from zero to building robust AI applications:
 
 **By the end**, you'll have a solid understanding of LangChain.js and understand how to build real AI applications you can deploy!
 
+> **🎯 Teaching Approach:** This course uses an agent-first progression—teaching tools, then agents, then combining them with document retrieval for intelligent RAG systems. This mirrors how modern production AI systems are built.
+
 > [!TIP]
 > **New to AI development?** Check out our companion course [**Generative AI with JavaScript**](https://github.com/microsoft/generative-ai-with-javascript) to learn AI fundamentals first!
 
@@ -38,13 +40,13 @@ This course contains **9 chapters** (setup + 8 chapters), each building on the p
 
 | # | Chapter | Description | Key Concepts |
 |---|---------|-------------|--------------|
-| 0 | [Course Setup](./00-course-setup/README.md) | Get your development environment ready | Environment setup, AI provider configuration |
+| 0 | [Course Setup](./00-course-setup/README.md) | Set up your development environment (local or cloud-based) | Node.js, GitHub Models/Azure AI, Codespaces, environment variables |
 | 1 | [Introduction to LangChain.js](./01-introduction/README.md) | Understanding the framework and core concepts | LangChain fundamentals, first LLM call |
 | 2 | [Chat Models & Basic Interactions](./02-chat-models/README.md) | Chat models, messages, and conversations | Message types, streaming, error handling, temperature |
 | 3 | [Prompts, Messages, and Structured Outputs](./03-prompts-messages-outputs/README.md) | Working with prompts, message arrays, and type-safe outputs | Messages, templates, structured outputs, Zod schemas |
 | 4 | [Function Calling & Tools](./04-function-calling-tools/README.md) | Extending AI capabilities with function calling and tools | Zod schemas, tool binding, type safety |
 | 5 | [Getting Started with Agents](./05-agents/README.md) | Building autonomous agents that reason and choose tools | ReAct pattern, agent loops, createAgent(), middleware |
-| 6 | [Model Context Protocol (MCP)](./06-mcp/README.md) | Connecting AI to external services using the MCP standard | MCP servers, transport types, tool integration, multi-server patterns |
+| 6 | [Model Context Protocol (MCP)](./06-mcp/README.md) | Connect AI to external services using the MCP standard | MCP servers, HTTP/stdio transports, tool integration, multi-server patterns |
 | 7 | [Documents, Embeddings & Semantic Search](./07-documents-embeddings-semantic-search/README.md) | Loading documents, creating embeddings, and building semantic search | Document loading, chunking, vector embeddings, similarity search |
 | 8 | [Building Agentic RAG Systems](./08-agentic-rag-systems/README.md) | Building RAG systems where agents intelligently decide when to search documents | Agentic RAG (agents decide when to search), retrieval tools, intelligent Q&A |
 
