@@ -11,13 +11,15 @@
 
 import { ChatOpenAI } from "@langchain/openai";
 import { tool } from "langchain";
+import { evaluate } from "mathjs";
 import * as z from "zod";
 import "dotenv/config";
 
 const calculatorTool = tool(
   async (input) => {
-    const sanitized = input.expression.replace(/[^0-9+\-*/().\s]/g, "");
-    return String(Function(`"use strict"; return (${sanitized})`)());
+    // Use mathjs for safe mathematical evaluation
+    const result = evaluate(input.expression);
+    return String(result);
   },
   {
     name: "calculator",

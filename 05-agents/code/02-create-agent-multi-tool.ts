@@ -1,5 +1,6 @@
 import { createAgent, HumanMessage, tool } from "langchain";
 import { ChatOpenAI } from "@langchain/openai";
+import { evaluate } from "mathjs";
 import * as z from "zod";
 import "dotenv/config";
 
@@ -18,8 +19,8 @@ import "dotenv/config";
 // Tool 1: Calculator
 const calculatorTool = tool(
   async (input) => {
-    const sanitized = input.expression.replace(/[^0-9+\-*/().\s]/g, "");
-    const result = Function(`"use strict"; return (${sanitized})`)();
+    // Use mathjs for safe mathematical evaluation
+    const result = evaluate(input.expression);
     return `The result is: ${result}`;
   },
   {

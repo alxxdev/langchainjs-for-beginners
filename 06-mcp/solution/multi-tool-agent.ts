@@ -13,6 +13,7 @@
 import { MultiServerMCPClient } from "@langchain/mcp-adapters";
 import { ChatOpenAI } from "@langchain/openai";
 import { createAgent, HumanMessage, tool } from "langchain";
+import { evaluate } from "mathjs";
 import * as z from "zod";
 import "dotenv/config";
 
@@ -25,9 +26,8 @@ const calculatorTool = tool(
   async (input) => {
     console.log(`   [Calculator] Evaluating: ${input.expression}`);
     try {
-      // Sanitize and evaluate the expression
-      const sanitized = input.expression.replace(/[^0-9+\-*/().\s]/g, "");
-      const result = Function(`"use strict"; return (${sanitized})`)();
+      // Use mathjs for safe mathematical evaluation
+      const result = evaluate(input.expression);
       return `The result is: ${result}`;
     } catch (error) {
       return `Error calculating "${input.expression}": ${error}`;
