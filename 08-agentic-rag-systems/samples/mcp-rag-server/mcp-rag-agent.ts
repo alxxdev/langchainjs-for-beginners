@@ -1,6 +1,6 @@
 /**
  * MCP RAG Agent - Agent Using Remote MCP RAG Server
- * Run: npx tsx 07-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-agent.ts
+ * Run: npx tsx 08-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-agent.ts
  *
  * This example demonstrates an agent connecting to the MCP RAG server
  * and using it to answer questions. The agent intelligently decides when
@@ -8,7 +8,7 @@
  *
  * Prerequisites:
  * 1. Start the MCP RAG server in another terminal:
- *    npx tsx 07-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-server.ts
+ *    npx tsx 08-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-server.ts
  * 2. Run this agent client
  *
  * Key Concepts:
@@ -59,7 +59,7 @@ async function initializeMCPClient() {
   // NOTE: StdioClientTransport automatically spawns and manages the server subprocess
   const transport = new StdioClientTransport({
     command: "npx",
-    args: ["tsx", "07-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-server.ts"],
+    args: ["tsx", "08-agentic-rag-systems/samples/mcp-rag-server/mcp-rag-server.ts"],
   });
 
   await mcpClient.connect(transport);
