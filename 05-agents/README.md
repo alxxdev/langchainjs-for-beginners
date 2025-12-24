@@ -645,7 +645,7 @@ in many electronic devices and an unwanted leakage process...
 ### How It Works
 
 **summarizationMiddleware**:
-- Monitors conversation length (tokens and/or messages) as the conversation grows
+- Monitors conversation length (tokens and messages in the code example) as the conversation grows
 - When `trigger` thresholds are exceeded, older messages are summarized into a condensed context
 - The `keep` parameter controls how many recent messages are preserved after summarization
 - The summary replaces older messages, maintaining context while reducing tokens
