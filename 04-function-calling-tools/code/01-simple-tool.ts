@@ -49,7 +49,7 @@ async function main() {
   const testExpressions = [
     "25 * 17",
     "(100 + 50) / 2",
-    "Math.sqrt(144)",
+    "sqrt(144)",
   ];
 
   for (const expr of testExpressions) {
